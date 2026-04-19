@@ -1,0 +1,312 @@
+.about-section {
+  padding: 120px 0;
+  position: relative;
+}
+
+.about-section.light {
+  background: var(--light-bg-gradient);
+  color: var(--light-text);
+}
+
+.about-section.dark {
+  background: var(--dark-bg-gradient);
+  color: var(--dark-text);
+}
+
+/* Detailed About Content */
+.about-content-detailed {
+  margin-bottom: 4rem;
+}
+
+.about-text-content {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.about-main-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 2rem;
+  background: var(--readable-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.about-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary-light);
+  text-align: justify;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.about-paragraph:nth-child(1) { animation-delay: 0.2s; }
+.about-paragraph:nth-child(2) { animation-delay: 0.4s; }
+.about-paragraph:nth-child(3) { animation-delay: 0.6s; }
+.about-paragraph:nth-child(4) { animation-delay: 0.8s; }
+
+.about-section.dark .about-paragraph {
+  color: var(--text-secondary-dark);
+}
+
+/* Stats Container Vertical */
+.stats-container-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: slideInRight 0.8s ease-out;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(77, 206, 196, 0.1) 50%, rgba(69, 183, 209, 0.1) 100%);
+  border-radius: var(--border-radius);
+  border: 2px solid transparent;
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), rgba(77, 206, 196, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.stat-card:hover::before {
+  left: 100%;
+}
+
+.stat-card:hover {
+  border-color: var(--teal-blue);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(77, 206, 196, 0.3);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-weight: 600;
+  color: var(--text-secondary-light);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+.about-section.dark .stat-label {
+  color: var(--text-secondary-dark);
+}
+
+/* Services Container */
+.services-container {
+  margin-top: 4rem;
+}
+
+.services-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.service-card {
+  background: var(--light-card);
+  padding: 2rem;
+  border-radius: var(--border-radius-large);
+  border: 1px solid var(--light-border);
+  box-shadow: var(--light-shadow);
+  transition: var(--transition-normal);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.about-section.dark .service-card {
+  background: var(--dark-card);
+  border-color: var(--dark-border);
+  box-shadow: var(--dark-shadow);
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--primary-gradient);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--light-hover-shadow);
+}
+
+.about-section.dark .service-card:hover {
+  box-shadow: var(--dark-hover-shadow);
+}
+
+.service-icon-container {
+  width: 80px;
+  height: 80px;
+  background: var(--readable-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: var(--transition-normal);
+}
+
+.service-card:hover .service-icon-container {
+  background: var(--primary-gradient);
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 8px 25px rgba(255, 140, 0, 0.3);
+}
+
+.service-icon {
+  font-size: 2rem;
+  color: white;
+}
+
+.service-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: inherit;
+}
+
+.service-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary-light);
+  margin: 0;
+}
+
+.about-section.dark .service-description {
+  color: var(--text-secondary-dark);
+}
+
+.service-hover-effect {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(180deg, transparent, rgba(255, 140, 0, 0.1));
+  transition: var(--transition-normal);
+}
+
+.service-card:hover .service-hover-effect {
+  height: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .about-main-title {
+    font-size: 2rem;
+  }
+  
+  .services-title {
+    font-size: 2rem;
+  }
+  
+  .stats-container-vertical {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .stat-card {
+    flex: 1;
+    min-width: 150px;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 100px 0;
+  }
+  
+  .about-main-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-paragraph {
+    font-size: 1rem;
+    text-align: left;
+  }
+  
+  .stats-container-vertical {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+  
+  .stat-card {
+    padding: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .service-card {
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .service-icon-container {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .service-icon {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-main-title {
+    font-size: 1.5rem;
+  }
+  
+  .services-title {
+    font-size: 1.8rem;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
+}

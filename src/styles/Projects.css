@@ -1,0 +1,427 @@
+/* src/styles/Projects.css - Clean Cards without Blue Backgrounds */
+
+.projects-section {
+  padding: 120px 0;
+  position: relative;
+}
+
+.projects-section.light {
+  background: var(--light-bg-gradient);
+}
+
+.projects-section.dark {
+  background: var(--dark-bg-gradient);
+}
+
+/* Professional Filter Container */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.filter-btn {
+  padding: 12px 24px;
+  background: transparent;
+  border: 2px solid var(--warm-orange);
+  border-radius: var(--border-radius-large);
+  color: var(--warm-orange);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-gradient);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.filter-btn:hover::before,
+.filter-btn.active::before {
+  left: 0;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  color: white;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+}
+
+/* Clean Project Cards */
+.project-card {
+  background: var(--light-card);
+  border-radius: var(--border-radius-large);
+  border: 1px solid var(--light-border);
+  box-shadow: var(--light-shadow);
+  transition: var(--transition-normal);
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.projects-section.dark .project-card {
+  background: var(--dark-card);
+  border-color: var(--dark-border);
+  box-shadow: var(--dark-shadow);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--light-hover-shadow);
+}
+
+.projects-section.dark .project-card:hover {
+  box-shadow: var(--dark-hover-shadow);
+}
+
+/* Subtle Featured Card Styling */
+.project-card.featured {
+  border: 2px solid var(--warm-orange);
+  position: relative;
+}
+
+.project-card.featured::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--primary-gradient);
+  z-index: 1;
+}
+
+/* Professional Featured Badge */
+.featured-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--primary-gradient);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* REMOVED: Blue Project Image Background */
+.project-image-container {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+  background: var(--light-card); /* Clean background instead of blue */
+}
+
+.projects-section.dark .project-image-container {
+  background: var(--dark-card);
+}
+
+.project-image {
+  width: 100%;
+  height: 140%;
+  object-fit: cover;
+  transition: var(--transition-slow);
+}
+
+/* Subtle Project Overlay */
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.9), rgba(255, 165, 0, 0.85));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition-normal);
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.overlay-content {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Professional Overlay Buttons */
+.overlay-btn {
+  padding: 10px 20px;
+  border: 2px solid white;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  transition: var(--transition-fast);
+  backdrop-filter: blur(10px);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.overlay-btn:hover {
+  background: white;
+  color: var(--warm-orange);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* Clean Project Content */
+.project-content {
+  padding: 2rem;
+  background: var(--light-card); /* Clean background */
+}
+
+.projects-section.dark .project-content {
+  background: var(--dark-card);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.project-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.project-stats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.project-stars {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--golden-yellow);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.project-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.projects-section.dark .project-description {
+  color: var(--text-secondary-dark);
+}
+
+/* UPDATED: Simple Tech Stack Tags (matching education style) */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-badge {
+  background: rgba(255, 215, 0, 0.12);
+  color: var(--text-primary);
+  padding: 0.3rem 0.7rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  transition: var(--transition-fast);
+  display: inline-block;
+}
+
+.projects-section.dark .tech-badge {
+  color: var(--dark-text);
+  background: rgba(255, 215, 0, 0.15);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.tech-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
+  background: rgba(255, 215, 0, 0.18);
+}
+
+/* Professional Project Actions */
+.project-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  text-align: center;
+  transition: var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.action-btn.primary {
+  background: var(--primary-gradient);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.25);
+}
+
+.action-btn.primary:hover {
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.35);
+  text-decoration: none;
+}
+
+.action-btn.secondary {
+  background: transparent;
+  color: var(--warm-orange);
+  border: 2px solid var(--warm-orange);
+}
+
+.projects-section.dark .action-btn.secondary {
+  color: var(--golden-yellow);
+  border-color: var(--golden-yellow);
+}
+
+.action-btn.secondary:hover {
+  background: var(--secondary-gradient);
+  color: white;
+  border-color: transparent;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* Professional Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 100px 0;
+  }
+  
+  .filter-container {
+    gap: 0.5rem;
+  }
+  
+  .filter-btn {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+  
+  .project-image-container {
+    height: 200px;
+  }
+  
+  .project-content {
+    padding: 1.5rem;
+  }
+  
+  .project-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  
+  .project-actions {
+    flex-direction: column;
+  }
+  
+  .action-btn {
+    padding: 10px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .filter-btn {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .project-content {
+    padding: 1rem;
+  }
+  
+  .project-title {
+    font-size: 1.2rem;
+  }
+  
+  .overlay-content {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .overlay-btn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+  
+  .featured-badge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .tech-badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+  }
+}

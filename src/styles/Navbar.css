@@ -1,0 +1,221 @@
+.modern-navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 140, 0, 0.1);
+  padding: 1rem 0;
+  transition: var(--transition-normal);
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(255, 140, 0, 0.1);
+}
+
+.modern-navbar.dark {
+  background: rgba(15, 15, 15, 0.95);
+  border-bottom: 1px solid rgba(255, 140, 0, 0.2);
+}
+
+.modern-navbar.scrolled {
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 30px rgba(255, 140, 0, 0.15);
+}
+
+/* Logo Styles */
+.brand-logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--teal-blue);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+/* Navigation Links */
+.modern-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.2rem !important;
+  margin: 0 0.3rem;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--light-text);
+}
+
+.modern-navbar.dark .modern-nav-link {
+  color: var(--dark-text);
+}
+
+.modern-nav-link:hover,
+.modern-nav-link.active {
+  background: var(--primary-gradient);
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 140, 0, 0.3);
+}
+
+.nav-icon {
+  font-size: 1rem;
+  transition: var(--transition-fast);
+}
+
+.nav-text {
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.nav-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: var(--teal-blue);
+  border-radius: 2px;
+  transition: var(--transition-fast);
+  transform: translateX(-50%);
+}
+
+.modern-nav-link.active .nav-indicator {
+  width: 80%;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  background: var(--light-card);
+  border: 2px solid var(--light-border);
+  border-radius: 25px;
+  padding: 0.3rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  width: 60px;
+  height: 32px;
+  position: relative;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modern-navbar.dark .theme-toggle-btn {
+  background: var(--dark-card);
+  border-color: var(--dark-border);
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--warm-orange);
+  box-shadow: 0 0 15px rgba(255, 140, 0, 0.3);
+}
+
+.toggle-track {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  position: relative;
+}
+
+.toggle-thumb {
+  width: 24px;
+  height: 24px;
+  background: var(--primary-gradient);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.7rem;
+  box-shadow: 0 2px 8px rgba(255, 140, 0, 0.3);
+}
+
+.toggle-thumb.light {
+  left: 2px;
+}
+
+.toggle-thumb.dark {
+  left: calc(100% - 26px);
+}
+
+.toggle-thumb:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 991px) {
+  .modern-navbar {
+    padding: 0.8rem 0;
+  }
+  
+  .logo-text {
+    font-size: 1.5rem;
+  }
+  
+  .modern-nav-link {
+    margin: 0.3rem 0;
+    padding: 0.7rem 1rem !important;
+    border-radius: var(--border-radius);
+    justify-content: flex-start;
+  }
+  
+  .theme-toggle-btn {
+    margin: 1rem 0 0.5rem;
+    align-self: flex-start;
+  }
+  
+  .navbar-collapse {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--light-border);
+  }
+  
+  .modern-navbar.dark .navbar-collapse {
+    border-top-color: var(--dark-border);
+  }
+}
+
+@media (max-width: 576px) {
+  .logo-text {
+    font-size: 1.3rem;
+  }
+  
+  .modern-nav-link {
+    padding: 0.6rem 0.8rem !important;
+    font-size: 0.9rem;
+  }
+  
+  .nav-icon {
+    font-size: 0.9rem;
+  }
+}
+
+/* Smooth scroll offset for fixed navbar */
+html {
+  scroll-padding-top: 80px;
+}

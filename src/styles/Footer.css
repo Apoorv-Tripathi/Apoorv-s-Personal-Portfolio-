@@ -1,0 +1,175 @@
+/* Minimal Footer - Matching Reference Image */
+.minimal-footer {
+  padding: 4rem 0;
+  background: var(--light-bg-gradient);
+}
+
+.minimal-footer.light {
+  color: #333;
+}
+
+.minimal-footer.dark {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+  color: #fff;
+}
+
+/* Footer Content Container */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2.5rem;
+}
+
+/* Logo/Brand */
+.footer-logo {
+  margin-bottom: 0.5rem;
+}
+
+.logo-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  color: #666;
+}
+
+/* Navigation Links */
+.footer-nav {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.footer-nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: var(--transition-fast);
+  position: relative;
+}
+
+.minimal-footer.dark .footer-nav-link {
+  color: #ccc;
+}
+
+.footer-nav-link:hover {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+/* Copyright */
+.footer-copyright {
+  padding: 1rem 0.8rem 0rem 0.8rem;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  font-size: 1rem;
+  color: #666;
+  font-weight: 550;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-copyright:hover {
+  color: var(--primary-color);
+}
+
+.minimal-footer.dark .footer-copyright {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #ccc;
+}
+
+.footer-copyright span {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+
+@keyframes heartbeat {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  14% {
+    transform: scale(1.15);
+  }
+
+  28% {
+    transform: scale(1);
+  }
+
+  42% {
+    transform: scale(1.15);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .minimal-footer {
+    padding: 3rem 0;
+  }
+
+  .footer-content {
+    gap: 2rem;
+  }
+
+  .footer-nav {
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-nav {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer-nav-link {
+    font-size: 0.9rem;
+  }
+
+  .footer-copyright {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.8rem;
+  }
+
+  .footer-content {
+    gap: 1.5rem;
+  }
+}
+
+.heart-icon {
+  color: #e74c3c;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.25);
+  }
+}
