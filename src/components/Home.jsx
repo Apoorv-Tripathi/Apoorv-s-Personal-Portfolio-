@@ -9,15 +9,15 @@ const Home = ({ isDarkMode }) => {
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const texts = [
-    'Full Stack Developer',
-    'Problem Solver',
-    'Tech Innovator',
-    'Creative Coder',
-    'Digital Creator'
-  ];
-
   useEffect(() => {
+    const texts = [
+      'Full Stack Developer',
+      'Problem Solver',
+      'Tech Innovator',
+      'Creative Coder',
+      'Digital Creator'
+    ];
+
     const timeout = setTimeout(() => {
       if (!isDeleting) {
         if (charIndex < texts[currentIndex].length) {
@@ -38,7 +38,7 @@ const Home = ({ isDarkMode }) => {
     }, isDeleting ? 50 : 120);
 
     return () => clearTimeout(timeout);
-  }, [charIndex, currentIndex, isDeleting, texts]);
+  }, [charIndex, currentIndex, isDeleting]);
 
   return (
     <section id="home" className={`home-section ${isDarkMode ? 'dark' : 'light'}`}>
@@ -95,7 +95,7 @@ const Home = ({ isDarkMode }) => {
                   { icon: FaGithub, href: 'https://github.com/Apoorv-Tripathi', label: 'GitHub' },
                   { icon: FaLinkedin, href: 'https://www.linkedin.com/in/apoorvtripathi1/', label: 'LinkedIn' },
                   { icon: FaTwitter, href: '#', label: 'Twitter' },
-                  { icon: FaInstagram, href: '\https://www.instagram.com/techie_apoorv?igsh=MTVxaDc1b3lqZjgxdA%3D%3D&utm_source=qr', label: 'Instagram' }
+                  { icon: FaInstagram, href: 'https://www.instagram.com/techie_apoorv?igsh=MTVxaDc1b3lqZjgxdA%3D%3D&utm_source=qr', label: 'Instagram' }
                 ].map(({ icon: Icon, href, label }, index) => (
                   <a key={index} href={href} className="social-link" aria-label={label}>
                     <Icon />

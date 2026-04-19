@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { FaBriefcase, FaMapMarkerAlt, FaCalendarAlt, FaChevronRight, FaCode, FaRocket } from 'react-icons/fa';
+import { FaBriefcase, FaMapMarkerAlt, FaChevronRight, FaRocket } from 'react-icons/fa';
 import '../styles/Experience.css';
 
 const Experience = ({ isDarkMode }) => {

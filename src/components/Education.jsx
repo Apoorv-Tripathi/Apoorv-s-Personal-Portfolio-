@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Badge } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { FaGraduationCap, FaCertificate, FaAward, FaMapMarkerAlt, FaCalendarAlt } from 'react-icons/fa';
 import '../styles/Education.css';
 
