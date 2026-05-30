@@ -28,20 +28,45 @@ const Contact = ({ isDarkMode }) => {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = validateForm();
-    if (Object.keys(newErrors).length > 0) { setErrors(newErrors); return; }
-    setIsSubmitting(true);
-    emailjs.send('service_yn9qjxm', 'template_portfolio', formData, 'YOUR_PUBLIC_KEY')
-      .then(() => {
-        setAlertType('success');
-        setShowAlert(true);
-        setFormData({ name: '', email: '', subject: '', message: '' });
-        setTimeout(() => setShowAlert(false), 5000);
-      })
-      .catch(() => { setAlertType('danger'); setShowAlert(true); })
-      .finally(() => setIsSubmitting(false));
+
+    if (Object.keys(newErrors).length === 0) {
+      setIsSubmitting(true);
+
+      emailjs
+        .send(
+          'service_i004vho',   
+          'template_chjmndo',  
+          {
+            from_name: formData.name,
+            from_email: formData.email,
+            subject: formData.subject,
+            message: formData.message,
+          },
+          'xA4XaXAWwQcsY8iC9'    
+        )
+        .then(() => {
+          setShowAlert(true);
+          setAlertType('success');
+          setFormData({ name: '', email: '', subject: '', message: '' });
+          setIsSubmitting(false);
+          setTimeout(() => setShowAlert(false), 5000);
+        })
+        .catch((error) => {
+          console.error('EmailJS Error:', error);
+          setShowAlert(true);
+          setAlertType('danger');
+          setIsSubmitting(false);
+          setTimeout(() => setShowAlert(false), 3000);
+        });
+    } else {
+      setErrors(newErrors);
+      setAlertType('danger');
+      setShowAlert(true);
+      setTimeout(() => setShowAlert(false), 3000);
+    }
   };
 
   return (
