@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { FaGithub, FaExternalLinkAlt, FaEye, FaStar, FaCode } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaEye, FaStar } from 'react-icons/fa';
 import '../styles/Projects.css';
 
 const PROJECTS = [

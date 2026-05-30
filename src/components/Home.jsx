@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaFileAlt, FaBriefcase, FaChevronDown, FaCode } from 'react-icons/fa';
+import { FaGithub, FaLinkedin,  FaFileAlt, FaBriefcase, FaChevronDown, FaCode } from 'react-icons/fa';
 import '../styles/Home.css';
 
 const TYPING_STRINGS = [

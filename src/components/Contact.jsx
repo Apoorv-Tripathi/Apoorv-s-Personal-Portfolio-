@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaTwitter,  FaPaperPlane,FaCode } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub,  FaPaperPlane, FaCode } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
 import '../styles/Contact.css';
 
