@@ -35,7 +35,7 @@ const PROJECTS = [
   {
     id: 3,
     title: 'INOTEC — Industrial Air Systems Platform',
-    description: 'INOTEC is a modern, responsive web application engineered for an industrial manufacturer specializing in digital tyre inflators, nitrogen generation machines, and heavy-duty air compressors. The platform features an interactive equipment catalog with category filtering, automated quotation routing that pre-fills user inquiries into the contact system, and full-spec Technical Data Sheet modals. It also integrates an in-browser pneumatic pressure converter supporting PSI, BAR, and kPa units, alongside a dedicated government tender compliance desk that allows procurement officers to copy verified company credentials and statutory details with a single click.',
+    description: 'INOTEC is a modern, responsive web application engineered for an industrial manufacturer specializing in digital tyre inflators, nitrogen generation machines, and heavy-duty air compressors. The platform features an interactive equipment catalog with category filtering, automated quotation routing that pre-fills user inquiries into the contact system, and full-spec Technical Data Sheet modals. It also integrates an interactive field installation showcase with high-resolution project previews, alongside a dedicated government tender compliance desk that allows procurement officers to copy verified company credentials and statutory details with a single click.',
     techStack: ['React', 'Vite', 'Modern CSS', 'Design Systems', 'Responsive UI'],
     image: `${publicUrl}/Assets/Inotec.png`,
     github: 'https://github.com/Apoorv-Tripathi/Inotec-Landing-Page.git',
