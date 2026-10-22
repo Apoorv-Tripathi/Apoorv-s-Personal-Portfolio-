@@ -9,15 +9,15 @@ const PROJECTS = [
   {
     id: 1,
     title: 'Project D.R.I.S.H.T.I.',
-    description: 'A qualified aeronautical engineering decision-support platform for the Ministry of Defence (MoD / Defence Services Staff College, SIH 2026). Unites 20Hz synced telemetry, acoustic vibration analytics, 3D combat airframe digital twins, and predictive failure physics to transform reactive grounding into proactive combat fleet readiness.',
-    techStack: ['React', 'Node.js', 'Express.js', 'MongoDB', '3D Digital Twin', 'Telemetry Bus', 'Predictive AI'],
+    description: 'Project D.R.I.S.H.T.I. is an advanced aircraft health monitoring and predictive maintenance web platform built for defense and aviation safety. In traditional aviation maintenance, aircraft parts are often checked only after a problem occurs or when planes are grounded unexpectedly. D.R.I.S.H.T.I. solves this by continuously monitoring live flight sensor data in real time, including engine temperatures, vibrations, oil pressure, and structural load. The system maps this incoming data onto an interactive 3D digital model (digital twin) of the aircraft, clearly highlighting stressed or overheating components before any flight danger arises. By detecting hidden wear and tear early, the platform helps pilots, maintenance engineers, and fleet commanders plan preventive repairs in advance, prevent costly breakdowns, and ensure every aircraft remains safe and mission-ready.',
+    techStack: ['React', 'Node.js', 'Express.js', 'MongoDB', '3D Digital Twin', 'Telemetry Analytics', 'Predictive AI'],
     image: `${publicUrl}/Assets/Drishti.png`,
     github: 'https://github.com/Apoorv-Tripathi/DRISHTI.git',
     live: 'https://drishti-diagnostic-reliability-inte.vercel.app',
     category: 'fullstack',
     featured: true,
-    tag: 'MoD Defence Suite',
-    metrics: 'SIH 2026 PS 26249'
+    tag: 'Defence Aviation Suite',
+    metrics: 'Aviation Health AI'
   },
   {
     id: 2,
@@ -35,11 +35,11 @@ const PROJECTS = [
   {
     id: 3,
     title: 'INOTEC — Industrial Air Systems Platform',
-    description: 'A modern, responsive web platform designed for an industrial equipment manufacturer. Features an interactive product catalog with category filtering, a real-time pneumatic pressure converter, full technical data sheets, and a government tender compliance desk with one-click detail copying.',
+    description: 'A modern, responsive corporate web platform designed for an industrial equipment manufacturer. Features an interactive product catalog with category filtering, a real-time pneumatic pressure unit converter, full technical data sheets with print options, and a dedicated government tender compliance desk with one-click vendor data copying.',
     techStack: ['React', 'Vite', 'Modern CSS', 'Design Systems', 'Responsive UI'],
     image: `${publicUrl}/Assets/Inotec.png`,
     github: 'https://github.com/Apoorv-Tripathi/Inotec-Landing-Page.git',
-    live: '',
+    live: '#',
     category: 'frontend',
     featured: true,
     tag: 'Industrial Web App',
@@ -211,17 +211,15 @@ const Projects = ({ isDarkMode }) => {
                         <FaGithub /> Code
                       </a>
                     )}
-                    {project.live && (
-                      <a 
-                        href={project.live} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="overlay-btn live-btn"
-                        aria-label={`View live demo for ${project.title}`}
-                      >
-                        <FaExternalLinkAlt /> Live Demo
-                      </a>
-                    )}
+                    <a 
+                      href={project.live || '#'} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="overlay-btn live-btn"
+                      aria-label={`View live demo for ${project.title}`}
+                    >
+                      <FaExternalLinkAlt /> Live Demo
+                    </a>
                   </div>
                 </div>
 
@@ -242,27 +240,15 @@ const Projects = ({ isDarkMode }) => {
                   </div>
 
                   <div className="project-actions">
-                    {project.live ? (
-                      <a 
-                        href={project.live} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="proj-btn primary"
-                        aria-label={`Open live project ${project.title}`}
-                      >
-                        <FaEye /> Live Demo
-                      </a>
-                    ) : (
-                      <a 
-                        href={project.github} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="proj-btn primary"
-                        aria-label={`Explore repository for ${project.title}`}
-                      >
-                        <FaGithub /> Repository Demo
-                      </a>
-                    )}
+                    <a 
+                      href={project.live || '#'} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="proj-btn primary"
+                      aria-label={`Open live project ${project.title}`}
+                    >
+                      <FaEye /> Live Demo
+                    </a>
                     {project.github && (
                       <a 
                         href={project.github} 
