@@ -73,6 +73,25 @@ body { font-family: var(--font-body); line-height:1.6; overflow-x:hidden; -webki
 .dark-theme  { background: var(--bg-primary);  color: var(--text-primary); }
 .light-theme { background: var(--light-bg);    color: var(--light-text);   }
 
+/* ---- Mouse Spotlight ---- */
+.mouse-spotlight {
+  position: fixed;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 65%);
+  transition: opacity 0.25s ease;
+}
+.light-theme .mouse-spotlight {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.06) 0%, transparent 65%);
+}
+@media (max-width: 768px) {
+  .mouse-spotlight { display: none; }
+}
+
 /* ---- Loading ---- */
 .loading-screen {
   position:fixed; inset:0;

@@ -1,33 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar as BootstrapNavbar, Nav, Container } from 'react-bootstrap';
-import { FaSun, FaMoon, FaHome, FaUser, FaProjectDiagram, FaBriefcase, FaGraduationCap, FaEnvelope } from 'react-icons/fa';
+import { FaSun, FaMoon, FaHome, FaUser, FaProjectDiagram, FaBriefcase, FaGraduationCap, FaEnvelope, FaAward } from 'react-icons/fa';
 import '../styles/Navbar.css';
 
 const Navbar = ({ isDarkMode, toggleTheme }) => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 10;
       setScrolled(isScrolled);
 
-      const sections = ['home', 'about', 'experience', 'projects', 'education', 'contact'];
-      const currentSection = sections.find(section => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
+      const sections = ['home', 'about', 'experience', 'projects', 'certificates', 'education', 'contact'];
+      const scrollPos = window.scrollY + 180;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sections[i]);
+        if (el && el.offsetTop <= scrollPos) {
+          setActiveSection(sections[i]);
+          break;
         }
-        return false;
-      });
-      
-      if (currentSection) {
-        setActiveSection(currentSection);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -36,6 +33,7 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
     { id: 'about', label: 'About', icon: FaUser },
     { id: 'experience', label: 'Experience', icon: FaBriefcase },
     { id: 'projects', label: 'Projects', icon: FaProjectDiagram },
+    { id: 'certificates', label: 'Certificates', icon: FaAward },
     { id: 'education', label: 'Education', icon: FaGraduationCap },
     { id: 'contact', label: 'Contact', icon: FaEnvelope }
   ];
@@ -43,18 +41,27 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
   return (
     <BootstrapNavbar 
       expand="lg" 
+      expanded={expanded}
+      onToggle={setExpanded}
       className={`modern-navbar ${scrolled ? 'scrolled' : ''} ${isDarkMode ? 'dark' : 'light'}`}
       fixed="top"
     >
       <Container>
-        <BootstrapNavbar.Brand href="#home" className="brand-logo">
+        <BootstrapNavbar.Brand href="#home" className="brand-logo" onClick={() => setExpanded(false)}>
           <div className="logo-container">
-            <span className="logo-text">Portfolio</span>
-            <div className="logo-dot"></div>
+            <span className="logo-bracket">&lt;</span>
+            <span className="logo-text">Apoorv</span>
+            <span className="logo-accent">.dev</span>
+            <span className="logo-bracket"> /&gt;</span>
+            <span className="status-ping" title="Available for opportunities"></span>
           </div>
         </BootstrapNavbar.Brand>
         
-        <BootstrapNavbar.Toggle aria-controls="modern-navbar-nav" />
+        <BootstrapNavbar.Toggle 
+          aria-controls="modern-navbar-nav" 
+          aria-label="Toggle navigation"
+          onClick={() => setExpanded(!expanded)}
+        />
         
         <BootstrapNavbar.Collapse id="modern-navbar-nav">
           <Nav className="ms-auto align-items-center">
@@ -62,6 +69,7 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
               <Nav.Link 
                 key={id}
                 href={`#${id}`}
+                onClick={() => setExpanded(false)}
                 className={`modern-nav-link ${activeSection === id ? 'active' : ''}`}
               >
                 <Icon className="nav-icon" />
@@ -70,7 +78,12 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
               </Nav.Link>
             ))}
             
-            <button className="theme-toggle-btn" onClick={toggleTheme}>
+            <button 
+              className="theme-toggle-btn" 
+              onClick={toggleTheme}
+              aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+              title={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
               <div className="toggle-track">
                 <div className={`toggle-thumb ${isDarkMode ? 'dark' : 'light'}`}>
                   {isDarkMode ? <FaMoon /> : <FaSun />}

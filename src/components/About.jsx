@@ -1,25 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { FaCode, FaLightbulb, FaRocket, FaPalette, FaCogs, FaUsers, FaDownload, FaArrowRight } from 'react-icons/fa';
+import { FaCode, FaLightbulb, FaRocket, FaPalette, FaCogs, FaUsers, FaDownload, FaArrowRight, FaCopy, FaCheck } from 'react-icons/fa';
 import SkillsShowcase from './SkillsShowcase';
 import '../styles/About.css';
 
 const About = ({ isDarkMode }) => {
+  const [copied, setCopied] = useState(false);
+  const publicUrl = process.env.PUBLIC_URL || '';
+
   const services = [
-    { icon: FaCode,      title: 'Web Development',         description: 'Creating responsive and performant web applications using modern frameworks with focus on user experience and scalability.' },
-    { icon: FaPalette,   title: 'UI/UX Design',             description: 'Designing beautiful and intuitive user interfaces with emphasis on accessibility and modern design principles.' },
-    { icon: FaCogs,      title: 'Frontend Development',     description: 'Building dynamic user interfaces with responsive design, secure client-side interactions, and efficient data sync.' },
-    { icon: FaLightbulb, title: 'Problem Solving',          description: 'Analyzing complex technical challenges and delivering innovative solutions through critical thinking.' },
-    { icon: FaRocket,    title: 'Performance Optimization', description: 'Optimizing applications for maximum speed, efficiency, and best user experience across all devices.' },
-    { icon: FaUsers,     title: 'Team Collaboration',       description: 'Working effectively in agile teams with excellent communication and collaborative project management.' },
+    { icon: FaCode,      title: 'Full Stack MERN',          description: 'Architecting scalable applications with React, Node.js, Express, and MongoDB with modern state and API design.' },
+    { icon: FaPalette,   title: 'UI/UX & Creative Frontend',description: 'Crafting responsive, high-fidelity interfaces with fluid typography, dark/light themes, and tactile micro-interactions.' },
+    { icon: FaCogs,      title: 'API & Microservice Design',description: 'Building secure RESTful endpoints, JWT session auth, third-party integrations, and real-time data sync.' },
+    { icon: FaLightbulb, title: 'Problem Solving & DSA',     description: 'Active competitive programmer on LeetCode with strong foundation in Data Structures, Algorithms, and C++.' },
+    { icon: FaRocket,    title: 'Performance & Optimization',description: 'Optimizing client load speeds, asset compression, lazy loading, and robust clean architecture.' },
+    { icon: FaUsers,     title: 'Team & Hackathon Leadership',description: 'Proven experience leading teams to the Grand Finale of Smart India Hackathon under intense sprint pressure.' },
   ];
 
   const stats = [
-    { number: '8+',  label: 'Projects',     icon: '🚀' },
-    { number: '2+',  label: 'Years Exp.',   icon: '⚡' },
-    { number: '11+', label: 'Clients',      icon: '🤝' },
-    { number: '12+', label: 'Technologies', icon: '🛠' },
+    { number: '10+',     label: 'Full Stack Projects', icon: '🚀' },
+    { number: 'Top 1%',  label: 'SIH 2025 Finalist',  icon: '🏆' },
+    { number: '200+',    label: 'DSA Problems Solved', icon: '⚡' },
+    { number: '12+',     label: 'Core Technologies',   icon: '🛠' },
   ];
+
+  const configCode = `const developer = {
+  name: "Apoorv Tripathi",
+  role: "Full Stack Developer",
+  college: "MPEC Kanpur",
+  stack: ["React", "Node", "Express", "MongoDB", "AI APIs"],
+  hackathon: "SIH 2025 Grand Finale Finalist",
+  status: "Open to Full-Time & Freelance"
+};`;
+
+  const handleCopyConfig = () => {
+    navigator.clipboard.writeText(configCode);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <section id="about" className={`about-section ${isDarkMode ? 'dark' : 'light'}`}>
@@ -36,7 +54,7 @@ const About = ({ isDarkMode }) => {
               <div className="decoration-line"></div>
             </div>
             <p className="section-subtitle">
-              Passionate developer with expertise in creating digital solutions that make a difference
+              Passionate engineer blending robust full-stack logic with refined, user-centric visual design
             </p>
           </Col>
         </Row>
@@ -58,24 +76,32 @@ const About = ({ isDarkMode }) => {
             BLOCK 1 — STORY
         ══════════════════════════════════════════ */}
         <div className="about-block">
-          <div className="about-block-label">01 — My Story</div>
+          <div className="about-block-label">01 — My Story &amp; Vision</div>
           <Row className="align-items-start g-4">
 
             {/* Left — text with readable card bg */}
             <Col lg={6}>
               <div className="story-card">
                 <h3 className="story-heading">
-                  Hello! I'm a Passionate{' '}
-                  <span className="story-highlight">Full Stack Developer</span>
+                  Hello! I'm a Driven{' '}
+                  <span className="story-highlight">Full Stack Engineer</span>
                 </h3>
                 <p className="story-para">
-                  I am a Computer Science undergraduate and Full Stack Developer passionate about building impactful web applications and solving real-world problems through technology. Using React.js, Node.js, Express.js, and MongoDB, I have developed multiple full-stack projects ranging from AI-powered SaaS platforms to scalable web applications.
+                  I am a Computer Science undergraduate and Full Stack Developer dedicated to architecting impactful web applications and solving real-world challenges through technology. Using React.js, Node.js, Express.js, and MongoDB, I build production-grade platforms ranging from AI-powered audit SaaS systems to large-scale data platforms.
                 </p>
                 <p className="story-para">
-                  As a Smart India Hackathon 2025 Finalist and Team Lead, I led the development of a unified education platform designed to streamline large-scale academic data management. I also completed a Full Stack Web Developer Internship at Pinnacle Labs, where I gained hands-on experience in building responsive applications, integrating APIs, and improving application performance.
+                  As a <strong>Smart India Hackathon 2025 Finalist and Team Lead</strong>, I spearheaded end-to-end development for a unified national education platform for the Ministry of Education, consolidating academic metrics across student, faculty, and institutional data pipelines.
                 </p>
-                <p className="story-para" >I enjoy turning ideas into practical digital solutions while continuously exploring modern web technologies, software engineering, and AI-driven innovation.</p>
-                <a href="/Assets/ApoorvResume.pdf" target="_blank" rel="noopener noreferrer" className="story-cta">
+                <p className="story-para">
+                  During my Full Stack Web Developer Internship at <strong>Pinnacle Labs</strong> and freelance projects, I have engineered modular RESTful architectures, boosted frontend rendering speeds, and elevated the user journey.
+                </p>
+                <a 
+                  href={`${publicUrl}/Assets/ApoorvResume.pdf`} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="story-cta"
+                  aria-label="Download Apoorv Tripathi Resume (PDF)"
+                >
                   <FaDownload /> Download Resume
                   <FaArrowRight className="cta-arrow" />
                 </a>
@@ -86,18 +112,28 @@ const About = ({ isDarkMode }) => {
             <Col lg={6}>
               <div className="terminal-card">
                 <div className="terminal-bar">
-                  <span className="t-dot red" />
-                  <span className="t-dot yellow" />
-                  <span className="t-dot green" />
+                  <div className="terminal-dots">
+                    <span className="t-dot red" />
+                    <span className="t-dot yellow" />
+                    <span className="t-dot green" />
+                  </div>
                   <span className="t-title">apoorv.config.js</span>
+                  <button 
+                    className="terminal-copy-btn" 
+                    onClick={handleCopyConfig} 
+                    title="Copy config"
+                    aria-label="Copy code to clipboard"
+                  >
+                    {copied ? <><FaCheck /> Copied</> : <><FaCopy /> Copy</>}
+                  </button>
                 </div>
                 <div className="terminal-body">
                   <p><span className="t-key">const</span> <span className="t-var">developer</span> <span className="t-op">=</span> {'{'}</p>
                   <p className="t-indent"><span className="t-key">name</span>: <span className="t-str">"Apoorv Tripathi"</span>,</p>
                   <p className="t-indent"><span className="t-key">role</span>: <span className="t-str">"Full Stack Developer"</span>,</p>
-                  <p className="t-indent"><span className="t-key">college</span>: <span className="t-str">"MPEC Kanpur"</span>,</p>
-                  <p className="t-indent"><span className="t-key">stack</span>: <span className="t-str">"MERN"</span>,</p>
-                  <p className="t-indent"><span className="t-key">learning</span>: <span className="t-str">"always"</span>,</p>
+                  <p className="t-indent"><span className="t-key">education</span>: <span className="t-str">"B.Tech CSE (2023–27)"</span>,</p>
+                  <p className="t-indent"><span className="t-key">stack</span>: [<span className="t-str">"MERN"</span>, <span className="t-str">"Cloud"</span>, <span className="t-str">"GenAI"</span>],</p>
+                  <p className="t-indent"><span className="t-key">hackathon</span>: <span className="t-str">"SIH 2025 Finalist"</span>,</p>
                   <p className="t-indent"><span className="t-key">available</span>: <span className="t-bool">true</span>,</p>
                   <p>{'}'}<span className="t-op">;</span></p>
                 </div>
@@ -107,8 +143,8 @@ const About = ({ isDarkMode }) => {
                 {[
                   { label: 'Location', value: 'Kanpur, UP, India' },
                   { label: 'Degree',   value: 'B.Tech CSE (2023–27)' },
-                  { label: 'Focus',    value: 'MERN Stack + Cloud' },
-                  { label: 'Status',   value: '🟢 Open to Work' },
+                  { label: 'Focus',    value: 'MERN Stack + GenAI SaaS' },
+                  { label: 'Status',   value: '🟢 Open to Opportunities' },
                 ].map((f, i) => (
                   <div key={i} className="fact-row">
                     <span className="fact-label">{f.label}</span>
@@ -124,7 +160,7 @@ const About = ({ isDarkMode }) => {
             BLOCK 2 — SKILLS
         ══════════════════════════════════════════ */}
         <div className="about-block">
-          <div className="about-block-label">02 — Skills</div>
+          <div className="about-block-label">02 — Skills &amp; Stack</div>
           <SkillsShowcase isDarkMode={isDarkMode} />
         </div>
 
@@ -132,7 +168,7 @@ const About = ({ isDarkMode }) => {
             BLOCK 3 — WHAT I DO
         ══════════════════════════════════════════ */}
         <div className="about-block">
-          <div className="about-block-label">03 — What I Do</div>
+          <div className="about-block-label">03 — What I Bring To The Table</div>
           <Row>
             {services.map((s, i) => (
               <Col lg={4} md={6} key={i} className="mb-4">

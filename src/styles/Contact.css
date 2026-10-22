@@ -52,6 +52,29 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.contact-status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: #10b981;
+  font-weight: 600;
+}
+
+.chip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
 }
 
 /* Info section */
@@ -75,6 +98,61 @@
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   transition: var(--transition-fast);
+}
+
+.info-content-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.contact-copy-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 0.72rem;
+  transition: var(--transition-fast);
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+.contact-copy-btn:hover {
+  background: var(--glow-color);
+  color: var(--accent-primary);
+  border-color: var(--border-accent);
+}
+
+.copy-done {
+  color: #10b981;
+}
+
+.info-link {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.info-link:hover {
+  color: var(--accent-primary);
+  text-decoration: underline;
+}
+
+.direct-email-inline {
+  color: var(--accent-cyan);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.direct-email-inline:hover {
+  color: var(--accent-primary);
 }
 
 .info-item:hover {

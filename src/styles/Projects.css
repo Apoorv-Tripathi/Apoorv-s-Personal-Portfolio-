@@ -16,7 +16,10 @@
 }
 
 .filter-btn {
-  padding: 8px 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
   font-family: var(--font-body);
   font-size: 0.85rem;
   font-weight: 500;
@@ -27,6 +30,12 @@
   cursor: pointer;
   transition: var(--transition-fast);
   letter-spacing: 0.02em;
+}
+
+.filter-count {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  opacity: 0.75;
 }
 
 .filter-btn:hover {
@@ -181,15 +190,31 @@
 
 .light-theme .project-title { color: var(--accent-primary); }
 
-.project-stars {
-  display: flex;
+.project-tag-badge {
+  display: inline-flex;
   align-items: center;
-  gap: 3px;
+  gap: 5px;
+  padding: 4px 10px;
+  background: var(--glow-color);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-full);
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--accent-amber);
+  font-size: 0.7rem;
+  color: var(--accent-cyan);
   white-space: nowrap;
-  flex-shrink: 0;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.tag-bolt {
+  font-size: 0.65rem;
+  color: var(--accent-amber);
+}
+
+.light-theme .project-tag-badge {
+  background: rgba(99, 102, 241, 0.08);
+  border-color: rgba(99, 102, 241, 0.25);
+  color: var(--accent-primary);
 }
 
 .project-description {

@@ -66,12 +66,56 @@
   font-family: var(--font-mono);
 }
 
+.job-badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  background: var(--glow-color);
+  border: 1px solid var(--border-accent);
+  color: var(--text-accent);
+  white-space: nowrap;
+}
+
+.job-item.highlight .job-badge {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.35);
+  color: #f59e0b;
+}
+
+.job-item.current .job-badge {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.35);
+  color: #10b981;
+}
+
 .job-period {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--text-muted);
   white-space: nowrap;
   letter-spacing: 0.02em;
+}
+
+.detail-top-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--glow-color);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent-cyan);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.detail-location {
+  color: var(--text-muted);
+  font-size: 0.85rem;
 }
 
 .job-meta {

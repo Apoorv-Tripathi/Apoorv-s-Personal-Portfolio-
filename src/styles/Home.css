@@ -118,6 +118,23 @@
   color:var(--light-text-secondary);
 }
 
+.cta-button.outline-contact {
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px dashed var(--accent-primary);
+  color: var(--text-accent);
+}
+.cta-button.outline-contact:hover {
+  background: var(--glow-color);
+  border-style: solid;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--glow-color);
+}
+.light-theme .cta-button.outline-contact {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
 /* Hero image */
 .hero-image-container {
   position:relative; display:inline-block;
@@ -145,17 +162,44 @@
   background:linear-gradient(to bottom, transparent 55%, var(--glow-color));
   z-index:2; pointer-events:none;
 }
-.hero-image-container::after {
-  content:'⚡ Open to opportunities';
-  position:absolute; bottom:-18px; left:50%; transform:translateX(-50%);
-  background:rgba(7,7,15,0.92); backdrop-filter:blur(12px);
-  border:1px solid rgba(16,185,129,0.4);
-  border-radius:var(--radius-full); padding:7px 18px;
-  font-family:var(--font-mono); font-size:0.72rem;
-  color:#10b981; white-space:nowrap; z-index:3;
-  box-shadow:0 4px 20px rgba(16,185,129,0.22);
-  letter-spacing:0.04em;
-  animation:fadeInUp 0.8s ease 1s both;
+
+.live-status-pill {
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(10, 10, 20, 0.94);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: var(--radius-full);
+  padding: 8px 18px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: #10b981;
+  white-space: nowrap;
+  z-index: 4;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 16px rgba(16, 185, 129, 0.2);
+  letter-spacing: 0.02em;
+}
+
+.light-theme .live-status-pill {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #059669;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.15);
+}
+
+.live-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  display: inline-block;
+  animation: pulse-glow 2s infinite;
 }
 
 /* Scroll hint */
@@ -165,12 +209,17 @@
   color:var(--text-muted); font-family:var(--font-mono);
   font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase;
   animation:fadeInUp 1s ease 1.3s both; z-index:2;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+.scroll-indicator:hover {
+  color: var(--accent-cyan);
 }
 .scroll-arrow { animation:float 2.2s ease-in-out infinite; color:var(--accent-primary); font-size:0.8rem; }
 
 @media (max-width:991px) {
   .hero-image { max-width:300px; height:300px; }
-  .hero-image-container::after { display:none; }
+  .live-status-pill { font-size: 0.68rem; padding: 6px 14px; bottom: -12px; }
 }
 @media (max-width:768px) {
   .home-section { padding:100px 0 60px; text-align:center; }
