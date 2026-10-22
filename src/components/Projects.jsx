@@ -9,7 +9,7 @@ const PROJECTS = [
   {
     id: 1,
     title: 'Project D.R.I.S.H.T.I.',
-    description: 'Project D.R.I.S.H.T.I. is an advanced aircraft health monitoring and predictive maintenance web platform built for defense and aviation safety. In traditional aviation maintenance, aircraft parts are often checked only after a problem occurs or when planes are grounded unexpectedly. D.R.I.S.H.T.I. solves this by continuously monitoring live flight sensor data in real time, including engine temperatures, vibrations, oil pressure, and structural load. The system maps this incoming data onto an interactive 3D digital model (digital twin) of the aircraft, clearly highlighting stressed or overheating components before any flight danger arises. By detecting hidden wear and tear early, the platform helps pilots, maintenance engineers, and fleet commanders plan preventive repairs in advance, prevent costly breakdowns, and ensure every aircraft remains safe and mission-ready.',
+    description: 'Project D.R.I.S.H.T.I. is an advanced aircraft health monitoring and predictive maintenance web application built to keep defense aviation fleets safe. The system tracks continuous sensor readings such as engine temperature, mechanical vibrations, oil pressure, and structural stress during flights. It connects this incoming data directly to an interactive 3D digital model of the aircraft, clearly highlighting stressed or overheating parts before they cause safety hazards. This empowers maintenance engineers and fleet operators to schedule preventive repairs early, avoid unexpected groundings, and maximize aircraft readiness.',
     techStack: ['React', 'Node.js', 'Express.js', 'MongoDB', '3D Digital Twin', 'Telemetry Analytics', 'Predictive AI'],
     image: `${publicUrl}/Assets/Drishti.png`,
     github: 'https://github.com/Apoorv-Tripathi/DRISHTI.git',
@@ -22,7 +22,7 @@ const PROJECTS = [
   {
     id: 2,
     title: 'SpendLens AI',
-    description: 'A full-stack AI Spend Audit SaaS platform that helps engineering teams analyze, optimize, and manage AI tool spending across platforms like ChatGPT, Claude, Cursor, GitHub Copilot, Gemini, and AI APIs. Features AI-generated audit summaries, real-time spend analysis, public shareable reports, and a modern SaaS-style user experience.',
+    description: 'SpendLens AI is an intelligent SaaS platform that helps development teams and modern companies track, audit, and optimize their spending on AI tools and cloud APIs. As organizations adopt multiple AI services like ChatGPT, Claude, Cursor, and Gemini, tracking scattered subscription costs becomes difficult. SpendLens solves this by centralizing team expenses into visual cost dashboards, identifying duplicate licenses, and running AI-driven audits to suggest practical cost reductions. The platform also generates shareable spending reports, alerts administrators to sudden usage spikes, and delivers actionable insights to keep software budgets completely under control.',
     techStack: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'Groq AI'],
     image: `${publicUrl}/Assets/SpendLense.png`,
     github: 'https://github.com/Apoorv-Tripathi/SpendPilot-AI.git',
@@ -35,7 +35,7 @@ const PROJECTS = [
   {
     id: 3,
     title: 'INOTEC — Industrial Air Systems Platform',
-    description: 'A modern, responsive corporate web platform designed for an industrial equipment manufacturer. Features an interactive product catalog with category filtering, a real-time pneumatic pressure unit converter, full technical data sheets with print options, and a dedicated government tender compliance desk with one-click vendor data copying.',
+    description: 'INOTEC is a modern, responsive web application engineered for an industrial manufacturer specializing in digital tyre inflators, nitrogen generation machines, and heavy-duty air compressors. The platform features an interactive equipment catalog with category filtering, automated quotation routing that pre-fills user inquiries into the contact system, and full-spec Technical Data Sheet modals. It also integrates an in-browser pneumatic pressure converter supporting PSI, BAR, and kPa units, alongside a dedicated government tender compliance desk that allows procurement officers to copy verified company credentials and statutory details with a single click.',
     techStack: ['React', 'Vite', 'Modern CSS', 'Design Systems', 'Responsive UI'],
     image: `${publicUrl}/Assets/Inotec.png`,
     github: 'https://github.com/Apoorv-Tripathi/Inotec-Landing-Page.git',
@@ -48,20 +48,20 @@ const PROJECTS = [
   {
     id: 4,
     title: 'Unified Education Platform',
-    description: 'A government-focused unified data platform developed during Smart India Hackathon 2025 for the Ministry of Education. Led end-to-end development (70% contribution) integrating student, teacher, and institutional data. Includes analytics modules for academic performance, rankings, and scheme tracking using Aadhaar, APAR ID, and AISHE codes.',
+    description: 'The Unified Education Platform is a comprehensive digital data portal designed to centralize and streamline records for schools, colleges, and educational departments. Fragmented databases often make it challenging for administrators to monitor academic standards and distribute student resources effectively. This system unites student profiles, faculty credentials, and institutional metrics under a unified dashboard powered by secure unique identifiers. It delivers automated analytics for academic performance, tracks educational resource distribution, and features role-based access portals so educators, students, and education officers can securely access accurate academic data anytime.',
     techStack: ['React', 'Node.js', 'Express.js', 'MongoDB', 'REST API', 'Data Analytics'],
     image: `${publicUrl}/Assets/UnifiedEduction.png`,
     github: 'https://github.com/Apoorv-Tripathi/Unified-Edu-Platform.git',
     live: 'https://unified-edu-platform-o47m.vercel.app/login',
     category: 'fullstack',
     featured: true,
-    tag: 'SIH 2025 Finalist',
-    metrics: 'National Hackathon'
+    tag: 'Education Portal',
+    metrics: 'Education Analytics'
   },
   {
     id: 5,
     title: 'Modern Portfolio Website',
-    description: 'An interactive personal portfolio designed with custom glassmorphism, responsive dot-grid shader, dark/light themes, and fluid typography. Built to showcase projects, skills, certificates, and live contact integrations.',
+    description: 'A modern, highly interactive personal portfolio website engineered from the ground up to showcase software engineering projects, technical skillsets, and professional milestones. Built with React and responsive design principles, the site features a sleek dark and light mode switcher, fluid typographic scaling, and accessible navigation. It includes an interactive project filtering system that sorts work by tech stack, high-resolution visual previews, and a direct contact integration powered by EmailJS. The entire interface is optimized for rapid loading and seamless usability across mobile phones, tablets, and wide desktop screens.',
     techStack: ['React.js', 'Bootstrap 5', 'Custom CSS', 'EmailJS'],
     image: `${publicUrl}/Assets/PersonalPortfolio.png`,
     github: 'https://github.com/Apoorv-Tripathi/Apoorv-s-Personal-Portfolio-.git',
@@ -74,11 +74,11 @@ const PROJECTS = [
   {
     id: 6,
     title: 'Zerodha Clone (Trading Platform)',
-    description: 'A full-stack stock trading simulation platform inspired by Zerodha, featuring interactive portfolio tracking, watchlists, order execution, and secure backend APIs. Simulates real-time market data flows in a clean trading UI.',
+    description: 'A full-stack financial trading simulation web application inspired by Zerodha Kite platform, designed to give users a realistic stock market trading experience without financial risk. The application features a dynamic watchlist that tracks real-time market price movements, interactive technical price charts, and an intuitive order execution modal for buying and selling shares. Users can manage a simulated investment portfolio, review historical trade logs, and analyze gains and losses in real time. Built using React and Node.js, the backend securely handles user authentication, balance updates, and trade executions.',
     techStack: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Mongoose'],
     image: `${publicUrl}/Assets/ZerodhaClone.png`,
     github: 'https://github.com/Apoorv-Tripathi/ZerodhaClone.git',
-    live: '',
+    live: '#',
     category: 'fullstack',
     featured: true,
     tag: 'Fintech Simulation',
@@ -87,7 +87,7 @@ const PROJECTS = [
   {
     id: 7,
     title: 'Postify (Community Forum)',
-    description: 'A responsive full-stack discussion and query forum similar to Quora where users can publish, edit, and discover community posts with clean RESTful API state synchronization and responsive UI.',
+    description: 'Postify is a full-stack community discussion and knowledge-sharing web application where users can ask questions, publish articles, and exchange ideas across various topics. The platform provides full content creation capabilities, allowing users to compose rich-text posts, edit existing submissions, comment on community threads, and vote on helpful responses. Built with a robust RESTful API architecture and clean database modeling, Postify ensures instant content synchronization and fast page rendering. Its responsive interface includes real-time search, topic filtering, and user profiles, creating an engaging and friendly environment for community discussions.',
     techStack: ['HTML5', 'CSS3', 'JavaScript', 'Node.js', 'Express.js', 'REST APIs'],
     image: `${publicUrl}/Assets/Postify.png`,
     github: 'https://github.com/Apoorv-Tripathi/PostifyProject.git',
@@ -100,11 +100,11 @@ const PROJECTS = [
   {
     id: 8,
     title: 'Spotify Web Player Clone',
-    description: 'A pixel-perfect frontend replica of the Spotify web player UI featuring sidebar navigation, album card grids, media player controls, and responsive audio layout.',
+    description: 'A pixel-perfect, responsive frontend reproduction of the popular Spotify Web Player, crafted to showcase advanced UI component architecture and interactive audio media controls. The interface includes a collapsible music navigation sidebar, a dynamic browse grid displaying curated music albums, and a sticky bottom playback controller complete with play, pause, track skipping, and volume adjustment sliders. Users can explore playlist views, search for tracks, and enjoy smooth hover micro-animations that mirror the authentic desktop streaming experience. The layout adapts seamlessly across all viewport sizes, ensuring comfortable navigation on both desktop and mobile devices.',
     techStack: ['HTML5', 'CSS3', 'JavaScript', 'Responsive UI'],
     image: `${publicUrl}/Assets/Spotify.png`,
     github: 'https://github.com/Apoorv-Tripathi',
-    live: '',
+    live: '#',
     category: 'frontend',
     featured: false,
     tag: 'UI/UX Replica',
@@ -113,7 +113,7 @@ const PROJECTS = [
   {
     id: 9,
     title: 'API Wonderland',
-    description: 'An interactive multi-API hub consuming diverse real-time endpoints to showcase asynchronous data fetching, dynamic DOM rendering, and JSON parsing in vanilla JavaScript.',
+    description: 'An interactive multi-API web application designed as a central hub for exploring and consuming diverse real-time public data services. The platform connects to several external REST APIs, delivering live weather updates, global country facts, currency conversion calculations, and inspirational daily quotes within a unified dashboard. Built using asynchronous JavaScript and modern DOM manipulation, the application gracefully handles loading states, network error boundaries, and dynamic JSON response parsing. Users can search and interact with each API module individually through an intuitive card-based layout featuring instant feedback and zero page reloads.',
     techStack: ['HTML5', 'CSS3', 'JavaScript (Fetch API)', 'Public APIs'],
     image: `${publicUrl}/Assets/APIWonderland.png`,
     github: 'https://github.com/Apoorv-Tripathi/APIWonderlandProject.git',
